@@ -12,12 +12,23 @@
 	</div>
 </template>
 
-<script>
+<script lang="ts">
 import Header from '@/components/header.vue'
 import Footer from '@/components/footer.vue'
 
+interface IUser {
+	login: string
+	age: number
+	isOnline: boolean
+}
+
 export default {
-	components: { Footer, Header }
+	components: { Footer, Header },
+	data() {
+		return {
+			user: { login: 'goblin', age: 33, isOnline: true } as IUser
+		}
+	}
 }
 </script>
 
